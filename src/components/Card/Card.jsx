@@ -11,7 +11,8 @@ const Card = (props) => {
         totalShiping = totalShiping + product.shipping;
     }
 
-    const tax = total * 7 / 100
+    const tax = total * 7 / 100;
+    const gandTotal = total + totalShiping + tax;
 
     return (
         <div className=''>
@@ -19,8 +20,8 @@ const Card = (props) => {
             <p>Selected Items: {cart.length}</p>
             <p>Total Prise: ${total} </p>
             <p>Shiping Prise Prise: ${totalShiping}</p>
-            <p>Tax: ${tax}</p>
-            <p>Gand Total: </p>
+            <p>Tax: ${tax.toFixed(1)}</p>
+            <p>Gand Total: ${gandTotal}</p>
         </div>
     );
 };
